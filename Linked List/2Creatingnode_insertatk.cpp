@@ -1,4 +1,12 @@
 
+
+
+
+
+
+
+
+
 #include <iostream>
 using namespace std;
 
@@ -57,4 +65,33 @@ int main() {
   insertAttail(head ,6);          // It will hit the last node at last
   display(head);                  // 5 4 3 2 1 6 NULL
 }
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
 
