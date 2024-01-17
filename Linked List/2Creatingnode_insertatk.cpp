@@ -88,7 +88,6 @@ void deleteAtHead(Node* &head) {
     head = head->next; // temp first node pr hi tha
     delete temp; // temp free
   }
-  cout<<"no node is there";
   }
 
 void deleteAtTail(Node* &head) 
@@ -139,7 +138,7 @@ void deleteAtPosition(Node* &head, int pos)
 void display(Node* head) {
   Node* temp = head;              // Create a temporary pointer and set it to the head of the list
   while (temp != NULL) {          // Iterate through the list until the end (NULL) is reached
-    cout << temp->data << " ";    // Print the data of the current node
+    cout << temp->data << "-->";    // Print the data of the current node
     temp = temp->next;            // Move the temporary pointer to the next node
   }
   cout << "NULL" << endl;         // Print "NULL" to indicate the end of the list
