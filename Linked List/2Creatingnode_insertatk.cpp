@@ -104,6 +104,37 @@ void deleteAtTail(Node* &head)
   delete(temp); // delete last node that is stored is temp
 }
 
+void deleteAtPosition(Node* &head, int pos) 
+{
+    // If the position is 0, call the deleteAtHead function and return
+    if(pos==0)  // At head del from there
+    {
+        deleteAtHead(head);
+    }
+
+    // Initialize a counter to keep track of the current position while traversing
+    int curr_posn = 0;
+
+    // Create a pointer to the node before the desired position
+    Node * prev = head; // If want to del 2th node so point to 1st
+
+    // Traverse the linked list until the position before the desired position is reached
+    while(curr_posn != pos-1) 
+    {
+        prev = prev->next;  // Move the pointer to the next node
+        curr_posn++;        // Increment the current position counter
+    }
+
+    // Create a pointer to the node at the desired position
+    Node * temp = prev->next; // 2nd position node in temp
+
+    // Update the next pointer of the node before the desired position to skip the desired node
+    prev->next = prev->next->next; //Connection of 1st and 3rd
+
+    // Delete the node at the desired position
+    delete(temp); 
+}
+
 // Function to display the elements of the linked list
 void display(Node* head) {
   Node* temp = head;              // Create a temporary pointer and set it to the head of the list
@@ -138,43 +169,10 @@ int main() {
   display(head);  
 
   deleteAtTail(head);
-  display(head);             
+  display(head); 
+
+  deleteAtPosition(head,2);
+  display(head);            
 }
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
 
 
