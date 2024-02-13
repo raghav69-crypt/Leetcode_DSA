@@ -20,7 +20,7 @@ class Node {
             delete next;
             next = NULL;
         }
-        cout << "memory free for node with data "<< val << endl;
+        cout << "Memory free for node with data "<< val << endl;
     }
 };
 
